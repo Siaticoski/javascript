@@ -1,14 +1,34 @@
-import entradaDados from 'readline-sync';
+import ED, {questionInt} from 'readline-sync';
 
-let alunos = [
-    {nome: entradaDados.question("Digite o nome do aluno: "),pri: entradaDados.questionFloat("Nota do bimestre: "), seg: entradaDados.questionFloat("Nota do bimestre: "), ter: entradaDados.questionFloat("Nota do bimestre: "), quar: entradaDados.questionFloat("Nota do bimestre: ")},
-    {nome: entradaDados.question("Digite o nome do aluno: ") ,pri: entradaDados.questionFloat("Nota do bimestre: "), seg: entradaDados.questionFloat("Nota do bimestre: "), ter: entradaDados.questionFloat("Nota do bimestre: "), quar: entradaDados.questionFloat("Nota do bimestre: ")},
-    {nome: entradaDados.question("Digite o nome do aluno: ") ,pri: entradaDados.questionFloat("Nota do bimestre: "), seg: entradaDados.questionFloat("Nota do bimestre: "), ter: entradaDados.questionFloat("Nota do bimestre: "), quar: entradaDados.questionFloat("Nota do bimestre: ")},
-    {nome: entradaDados.question("Digite o nome do aluno: ") ,pri: entradaDados.questionFloat("Nota do bimestre: "), seg: entradaDados.questionFloat("Nota do bimestre: "), ter: entradaDados.questionFloat("Nota do bimestre: "), quar: entradaDados.questionFloat("Nota do bimestre: ")},
-];
+let NA = ED.questionInt("Informe a quantidade de alunos: ");
+
+let SM = 0;
+let ContAluno = 1;
 
 
+while (ContAluno <= NA) {
+    console.log(`Aluno ${ContAluno}.`);
 
-while (condition) {
-    
+    let SomaNotas = 0;
+    let contadorBimestres = 1;
+
+    while (contadorBimestres <= 4) {
+        let nota = ED.questionInt(`Digite a nota do ${contadorBimestres}º bimestre do aluno ${ContAluno}.`)
+        SomaNotas = SM + nota;
+        contadorBimestres++;
+    }
+
+    let MA = SomaNotas / 4;
+
+    SM += MA;
+
+    console.log(`Média do aluno ${ContAluno}: ${MA.toFixed(2)}`);
+
+    ContAluno++;
+
 }
+
+
+let MGT = SM / NA;
+
+console.log(`Média geral da turma: ${MGT.toFixed(2)}`);
