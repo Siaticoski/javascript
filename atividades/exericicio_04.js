@@ -27,7 +27,7 @@ class Veiculo {
         return `Marca da ${this.marca}, do modelo ${this.modelo}, do ano de ${this.ano}.`
 }
 };
-
+let marca;
 const Carro = new Veiculo();
 Carro.marca = "Toyota";
 Carro.modelo = "Corolla";
