@@ -34,7 +34,7 @@ function validaParametro(parametro) {
     {
         return true;
     }
-}
+};
 
 
 exports.efetuarCalculoIMC = efetuarCalculoIMC;
